@@ -98,7 +98,7 @@ class DotPrinter(Printer):
 
         # Add class attributes
         attrs: list[str] = properties.attrs or []
-        label = "{" + label + "|" + r"\l".join(attrs) + r"\l|"
+        label = "{" + label + "|" + r"\l".join(attrs).replace("|", r"\|") + r"\l|"
 
         # Add class methods
         methods: list[nodes.FunctionDef] = properties.methods or []
